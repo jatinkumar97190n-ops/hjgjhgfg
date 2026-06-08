@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Video Player</title>
+    <style>
+        body { background-color: #000; margin: 0; display: flex; justify-content: center; align-items: center; height: 100vh; }
+        .video-container {
+            width: 100%; max-width: 800px; aspect-ratio: 16/9;
+            overflow: hidden; position: relative; border-radius: 8px;
+        }
+        iframe {
+            width: 100%; height: 120%; position: absolute;
+            top: -48px; left: 0; border: none;
+        }
+    </style>
+</head>
+<body>
+
+<div class="video-container">
+    <iframe id="dmPlayer" 
+            src="https://www.dailymotion.com/embed/video/xadxr9a?autoplay=1&mute=0&ui-logo=0&ui-startscreen-info=0&sharing-enable=0" 
+            allow="autoplay; fullscreen" allowfullscreen>
+    </iframe>
+</div>
+
+<script>
+    const script = document.createElement('script');
+    script.src = "https://api.dmcdn.net/all.js";
+    document.body.appendChild(script);
+
+    script.onload = () => {
+        const dynamicVideoId = "xadxr9a";
+
+        const player = DM.player(document.getElementById("dmPlayer"), {
+            video: dynamicVideoId,
+            params: { autoplay: true, mute: false }
+        });
+
+        player.addEventListener("ended", function() {
+            player.load(dynamicVideoId); 
+            player.play();
+        });
+    };
+</script>
+
+</body>
+</html>
