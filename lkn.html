@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Peddi - Movie Player</title>
+    <style>
+        /* Basic Reset */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: #0f0f0f; /* YouTube Dark Theme Background */
+            color: #ffffff;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+        }
+
+        /* Top Video Player Section (16:9 Aspect Ratio) */
+        .video-wrapper {
+            width: 100%;
+            max-width: 1000px;
+            margin: 0 auto;
+            background-color: #000;
+        }
+
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+            height: 0;
+            overflow: hidden;
+        }
+
+        .video-container iframe, 
+        .video-container video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        /* Bottom Movie Details Section */
+        .details-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            /* टेक्स्ट को किनारों से थोड़ा और अंदर करने के लिए पैडिंग बढ़ाई गई है */
+            padding: 25px 30px; 
+        }
+
+        .movie-title {
+            font-size: 22px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #f1f1f1;
+        }
+
+        .meta-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            color: #aaaaaa;
+            font-size: 14px;
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #333;
+        }
+
+        .meta-item strong {
+            color: #cccccc;
+        }
+
+        .section-title {
+            font-size: 16px;
+            font-weight: bold;
+            color: #ffffff;
+            margin-top: 15px;
+            margin-bottom: 5px;
+        }
+
+        .content-text {
+            font-size: 14px;
+            color: #cccccc;
+            margin-bottom: 15px;
+        }
+
+        /* Green Button Style */
+        .language-badge {
+            background-color: #1e7b1e;
+            color: white;
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: bold;
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="video-wrapper">
+        <div class="video-container">
+            <iframe 
+                src="https://gemma416okl.com/play/tt23865918" 
+                title="Movie Player" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen" 
+                allowfullscreen="true"
+                sandbox="allow-scripts opacity-animate allow-same-origin">
+            </iframe>
+        </div>
+    </div>
+
+    <div class="details-container">
+        <span class="language-badge">Hindi ⌄</span>
+        
+        <h1 class="movie-title">Peddi</h1>
+        
+        <div class="meta-info">
+            <span class="meta-item"><strong>Year:</strong> 2026</span>
+            <span class="meta-item"><strong>Release Date:</strong> 04 Jun 2026</span>
+            <span class="meta-item"><strong>Genre:</strong> Action, Drama, Sport</span>
+        </div>
+
+        <div class="section-title">Actors:</div>
+        <div class="content-text">
+            Ram Charan, Janhvi Kapoor, Shivarajkumar
+        </div>
+
+        <div class="section-title">Plot:</div>
+        <div class="content-text">
+            In 1980s rural Andhra Pradesh, A spirited villager unites his community through sports to defend their pride against a powerful rival.
+        </div>
+    </div>
+
+</body>
+</html>
